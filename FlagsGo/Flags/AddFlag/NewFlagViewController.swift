@@ -32,6 +32,8 @@ class NewFlagViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: doneBtn)
         
         newFlagV = NewFlagInfoView(frame: CGRect(x: 0, y: 64, width: view.width, height: view.height - 64))
+        newFlagV._target = self
+        
         view.addSubview(newFlagV)
         
     }
@@ -47,10 +49,31 @@ class NewFlagViewController: UIViewController {
             return
         }
         
+        //判断时间的选择是否符合逻辑
+        let startDate: String = (newFlagV.startBtn.titleLabel?.text)!
+        let endDate: String = (newFlagV.endBtn.titleLabel?.text)!
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy年MM月dd日"
+        
+        let dateTimeS: Date = dateFormatter.date(from: startDate)!
+        let dateTimeE: Date = dateFormatter.date(from: endDate)!
+        
+        guard dateTimeS != dateTimeE else {
+            noticeTop("时间不能为同一天", autoClear: true, autoClearTime: 2)
+            return
+        }
+        
+        guard dateTimeS < dateTimeE else {
+            noticeTop("升旗时间不能在Flag招展日之后", autoClear: true, autoClearTime: 2)
+            return
+        }
+        
+        //添加数据 -> 刷新UI准备
         let dataModel = FlagDataModel(datas: ["title": flagtitle!, "slogan": flagslogan!])
         FlagTag.flagDatas.append(dataModel)
-        //注册监听
+        //发送监听 -> 刷新UI
         NotificationCenter.default.post(name: NSNotification.Name("newflag"), object: nil)
+        
         //返回上一层界面
         self.navigationController?.popViewController(animated: true)
     }

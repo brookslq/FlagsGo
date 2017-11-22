@@ -1,0 +1,800 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		274762C51D445121D60A02FF /* Pods_FlagsGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8028A478C617C407355BDF0B /* Pods_FlagsGo.framework */; };
+		984AAF041FC514F500A50B1B /* NewFlagTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984AAF031FC514F500A50B1B /* NewFlagTextField.swift */; };
+		984AAF061FC5246300A50B1B /* FlagsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984AAF051FC5246300A50B1B /* FlagsModel.swift */; };
+		986D1AD01FB96D5700348230 /* NewFlagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D1ACF1FB96D5700348230 /* NewFlagViewController.swift */; };
+		986D1AD51FB9730200348230 /* FuncListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D1AD41FB9730200348230 /* FuncListTableView.swift */; };
+		986D1ADA1FB9819400348230 /* FlagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D1AD81FB9819400348230 /* FlagTableViewCell.swift */; };
+		986D1ADB1FB9819400348230 /* FlagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 986D1AD91FB9819400348230 /* FlagTableViewCell.xib */; };
+		986D1ADD1FB9832100348230 /* FlagTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D1ADC1FB9832100348230 /* FlagTag.swift */; };
+		986D1AE11FB986D600348230 /* FlagDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D1AE01FB986D600348230 /* FlagDataModel.swift */; };
+		986D1AE81FB98C1C00348230 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D1AE21FB98C1C00348230 /* SwiftNotice.swift */; };
+		986D1AE91FB98C1C00348230 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D1AE31FB98C1C00348230 /* UIColor+Extension.swift */; };
+		986D1AEA1FB98C1C00348230 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D1AE41FB98C1C00348230 /* UIImageView+Extension.swift */; };
+		986D1AEB1FB98C1C00348230 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D1AE51FB98C1C00348230 /* UITextField+Extension.swift */; };
+		986D1AEC1FB98C1C00348230 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D1AE61FB98C1C00348230 /* UIView+Extension.swift */; };
+		986D1AED1FB98C1C00348230 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D1AE71FB98C1C00348230 /* UIButton+Extension.swift */; };
+		986D1AEF1FB98FDC00348230 /* NewFlagInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D1AEE1FB98FDC00348230 /* NewFlagInfoView.swift */; };
+		9876EF7E1FB3EE2A00E2730A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9876EF7D1FB3EE2A00E2730A /* AppDelegate.swift */; };
+		9876EF801FB3EE2A00E2730A /* FlagsTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9876EF7F1FB3EE2A00E2730A /* FlagsTabBarViewController.swift */; };
+		9876EF851FB3EE2A00E2730A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9876EF841FB3EE2A00E2730A /* Assets.xcassets */; };
+		9876EF881FB3EE2A00E2730A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9876EF861FB3EE2A00E2730A /* LaunchScreen.storyboard */; };
+		9876EF931FB3EE2A00E2730A /* FlagsGoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9876EF921FB3EE2A00E2730A /* FlagsGoTests.swift */; };
+		9876EF9E1FB3EE2A00E2730A /* FlagsGoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9876EF9D1FB3EE2A00E2730A /* FlagsGoUITests.swift */; };
+		98F6F1DE1FB92D00003E9451 /* FlagsGoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F6F1DD1FB92D00003E9451 /* FlagsGoViewController.swift */; };
+		98F6F1E11FB92DAB003E9451 /* PoetryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F6F1E01FB92DAB003E9451 /* PoetryViewController.swift */; };
+		98F6F1E41FB92DD4003E9451 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F6F1E31FB92DD4003E9451 /* WeatherViewController.swift */; };
+		98F6F1E71FB92E5B003E9451 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F6F1E61FB92E5B003E9451 /* UserViewController.swift */; };
+		98F6F1EA1FB93BC7003E9451 /* UserInfoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F6F1E91FB93BC7003E9451 /* UserInfoTableView.swift */; };
+		98F6F1EC1FB93D2C003E9451 /* FlagsCardsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F6F1EB1FB93D2C003E9451 /* FlagsCardsTableView.swift */; };
+		98F6F1EE1FB93D73003E9451 /* FlagsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F6F1ED1FB93D73003E9451 /* FlagsMapView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9876EF8F1FB3EE2A00E2730A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9876EF721FB3EE2A00E2730A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9876EF791FB3EE2A00E2730A;
+			remoteInfo = FlagsGo;
+		};
+		9876EF9A1FB3EE2A00E2730A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9876EF721FB3EE2A00E2730A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9876EF791FB3EE2A00E2730A;
+			remoteInfo = FlagsGo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0DF9090F24A3E5F30903CD66 /* Pods-FlagsGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlagsGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlagsGo/Pods-FlagsGo.release.xcconfig"; sourceTree = "<group>"; };
+		8028A478C617C407355BDF0B /* Pods_FlagsGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlagsGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96E31F8DA19E31BEA37CE49F /* Pods-FlagsGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlagsGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlagsGo/Pods-FlagsGo.debug.xcconfig"; sourceTree = "<group>"; };
+		984AAF031FC514F500A50B1B /* NewFlagTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlagTextField.swift; sourceTree = "<group>"; };
+		984AAF051FC5246300A50B1B /* FlagsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsModel.swift; sourceTree = "<group>"; };
+		986D1ACF1FB96D5700348230 /* NewFlagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlagViewController.swift; sourceTree = "<group>"; };
+		986D1AD41FB9730200348230 /* FuncListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncListTableView.swift; sourceTree = "<group>"; };
+		986D1AD81FB9819400348230 /* FlagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagTableViewCell.swift; sourceTree = "<group>"; };
+		986D1AD91FB9819400348230 /* FlagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlagTableViewCell.xib; sourceTree = "<group>"; };
+		986D1ADC1FB9832100348230 /* FlagTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagTag.swift; sourceTree = "<group>"; };
+		986D1AE01FB986D600348230 /* FlagDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagDataModel.swift; sourceTree = "<group>"; };
+		986D1AE21FB98C1C00348230 /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
+		986D1AE31FB98C1C00348230 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		986D1AE41FB98C1C00348230 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		986D1AE51FB98C1C00348230 /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		986D1AE61FB98C1C00348230 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		986D1AE71FB98C1C00348230 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		986D1AEE1FB98FDC00348230 /* NewFlagInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlagInfoView.swift; sourceTree = "<group>"; };
+		9876EF7A1FB3EE2A00E2730A /* FlagsGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlagsGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9876EF7D1FB3EE2A00E2730A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9876EF7F1FB3EE2A00E2730A /* FlagsTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsTabBarViewController.swift; sourceTree = "<group>"; };
+		9876EF841FB3EE2A00E2730A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9876EF871FB3EE2A00E2730A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9876EF891FB3EE2A00E2730A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9876EF8E1FB3EE2A00E2730A /* FlagsGoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlagsGoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9876EF921FB3EE2A00E2730A /* FlagsGoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsGoTests.swift; sourceTree = "<group>"; };
+		9876EF941FB3EE2A00E2730A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9876EF991FB3EE2A00E2730A /* FlagsGoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlagsGoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9876EF9D1FB3EE2A00E2730A /* FlagsGoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsGoUITests.swift; sourceTree = "<group>"; };
+		9876EF9F1FB3EE2A00E2730A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98F6F1DD1FB92D00003E9451 /* FlagsGoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsGoViewController.swift; sourceTree = "<group>"; };
+		98F6F1E01FB92DAB003E9451 /* PoetryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoetryViewController.swift; sourceTree = "<group>"; };
+		98F6F1E31FB92DD4003E9451 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		98F6F1E61FB92E5B003E9451 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		98F6F1E91FB93BC7003E9451 /* UserInfoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableView.swift; sourceTree = "<group>"; };
+		98F6F1EB1FB93D2C003E9451 /* FlagsCardsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsCardsTableView.swift; sourceTree = "<group>"; };
+		98F6F1ED1FB93D73003E9451 /* FlagsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsMapView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9876EF771FB3EE2A00E2730A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				274762C51D445121D60A02FF /* Pods_FlagsGo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9876EF8B1FB3EE2A00E2730A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9876EF961FB3EE2A00E2730A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		95B7C6155535E512E9E62FCE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				96E31F8DA19E31BEA37CE49F /* Pods-FlagsGo.debug.xcconfig */,
+				0DF9090F24A3E5F30903CD66 /* Pods-FlagsGo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		986D1ACE1FB96D3800348230 /* AddFlag */ = {
+			isa = PBXGroup;
+			children = (
+				986D1ACF1FB96D5700348230 /* NewFlagViewController.swift */,
+				986D1AEE1FB98FDC00348230 /* NewFlagInfoView.swift */,
+				984AAF051FC5246300A50B1B /* FlagsModel.swift */,
+			);
+			path = AddFlag;
+			sourceTree = "<group>";
+		};
+		986D1AD11FB9728200348230 /* UpPoetry */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UpPoetry;
+			sourceTree = "<group>";
+		};
+		986D1ADE1FB986AD00348230 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98F6F1EB1FB93D2C003E9451 /* FlagsCardsTableView.swift */,
+				986D1AD81FB9819400348230 /* FlagTableViewCell.swift */,
+				986D1AD91FB9819400348230 /* FlagTableViewCell.xib */,
+				98F6F1ED1FB93D73003E9451 /* FlagsMapView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		986D1ADF1FB986C200348230 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				986D1AE01FB986D600348230 /* FlagDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9876EF711FB3EE2A00E2730A = {
+			isa = PBXGroup;
+			children = (
+				9876EF7C1FB3EE2A00E2730A /* FlagsGo */,
+				9876EF911FB3EE2A00E2730A /* FlagsGoTests */,
+				9876EF9C1FB3EE2A00E2730A /* FlagsGoUITests */,
+				9876EF7B1FB3EE2A00E2730A /* Products */,
+				95B7C6155535E512E9E62FCE /* Pods */,
+				CE570982E1D90E1A166536D2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9876EF7B1FB3EE2A00E2730A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9876EF7A1FB3EE2A00E2730A /* FlagsGo.app */,
+				9876EF8E1FB3EE2A00E2730A /* FlagsGoTests.xctest */,
+				9876EF991FB3EE2A00E2730A /* FlagsGoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9876EF7C1FB3EE2A00E2730A /* FlagsGo */ = {
+			isa = PBXGroup;
+			children = (
+				9876EFAC1FB400C700E2730A /* Tool */,
+				9876EF891FB3EE2A00E2730A /* Info.plist */,
+				9876EF841FB3EE2A00E2730A /* Assets.xcassets */,
+				98F6F1E81FB92EB8003E9451 /* Home */,
+				9876EFAB1FB3FB8C00E2730A /* Flags */,
+				98F6F1DF1FB92D09003E9451 /* Poetry */,
+				98F6F1E21FB92DC0003E9451 /* Weather */,
+				98F6F1E51FB92DF1003E9451 /* User */,
+			);
+			path = FlagsGo;
+			sourceTree = "<group>";
+		};
+		9876EF911FB3EE2A00E2730A /* FlagsGoTests */ = {
+			isa = PBXGroup;
+			children = (
+				9876EF921FB3EE2A00E2730A /* FlagsGoTests.swift */,
+				9876EF941FB3EE2A00E2730A /* Info.plist */,
+			);
+			path = FlagsGoTests;
+			sourceTree = "<group>";
+		};
+		9876EF9C1FB3EE2A00E2730A /* FlagsGoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9876EF9D1FB3EE2A00E2730A /* FlagsGoUITests.swift */,
+				9876EF9F1FB3EE2A00E2730A /* Info.plist */,
+			);
+			path = FlagsGoUITests;
+			sourceTree = "<group>";
+		};
+		9876EFAB1FB3FB8C00E2730A /* Flags */ = {
+			isa = PBXGroup;
+			children = (
+				98F6F1DD1FB92D00003E9451 /* FlagsGoViewController.swift */,
+				986D1ADF1FB986C200348230 /* Model */,
+				986D1ADE1FB986AD00348230 /* View */,
+				986D1ACE1FB96D3800348230 /* AddFlag */,
+			);
+			path = Flags;
+			sourceTree = "<group>";
+		};
+		9876EFAC1FB400C700E2730A /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				986D1AE21FB98C1C00348230 /* SwiftNotice.swift */,
+				986D1AE71FB98C1C00348230 /* UIButton+Extension.swift */,
+				986D1AE31FB98C1C00348230 /* UIColor+Extension.swift */,
+				986D1AE41FB98C1C00348230 /* UIImageView+Extension.swift */,
+				986D1AE51FB98C1C00348230 /* UITextField+Extension.swift */,
+				986D1AE61FB98C1C00348230 /* UIView+Extension.swift */,
+				986D1ADC1FB9832100348230 /* FlagTag.swift */,
+				984AAF031FC514F500A50B1B /* NewFlagTextField.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		98F6F1DF1FB92D09003E9451 /* Poetry */ = {
+			isa = PBXGroup;
+			children = (
+				98F6F1E01FB92DAB003E9451 /* PoetryViewController.swift */,
+				986D1AD11FB9728200348230 /* UpPoetry */,
+				986D1AD41FB9730200348230 /* FuncListTableView.swift */,
+			);
+			path = Poetry;
+			sourceTree = "<group>";
+		};
+		98F6F1E21FB92DC0003E9451 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				98F6F1E31FB92DD4003E9451 /* WeatherViewController.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		98F6F1E51FB92DF1003E9451 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				98F6F1E61FB92E5B003E9451 /* UserViewController.swift */,
+				98F6F1E91FB93BC7003E9451 /* UserInfoTableView.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		98F6F1E81FB92EB8003E9451 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9876EF861FB3EE2A00E2730A /* LaunchScreen.storyboard */,
+				9876EF7F1FB3EE2A00E2730A /* FlagsTabBarViewController.swift */,
+				9876EF7D1FB3EE2A00E2730A /* AppDelegate.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CE570982E1D90E1A166536D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8028A478C617C407355BDF0B /* Pods_FlagsGo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9876EF791FB3EE2A00E2730A /* FlagsGo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9876EFA21FB3EE2A00E2730A /* Build configuration list for PBXNativeTarget "FlagsGo" */;
+			buildPhases = (
+				441732466B2541F6E6BAA328 /* [CP] Check Pods Manifest.lock */,
+				9876EF761FB3EE2A00E2730A /* Sources */,
+				9876EF771FB3EE2A00E2730A /* Frameworks */,
+				9876EF781FB3EE2A00E2730A /* Resources */,
+				808CC9689E412E01848CB80D /* [CP] Embed Pods Frameworks */,
+				3B2AD6D03363F41A5BB78006 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlagsGo;
+			productName = FlagsGo;
+			productReference = 9876EF7A1FB3EE2A00E2730A /* FlagsGo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9876EF8D1FB3EE2A00E2730A /* FlagsGoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9876EFA51FB3EE2A00E2730A /* Build configuration list for PBXNativeTarget "FlagsGoTests" */;
+			buildPhases = (
+				9876EF8A1FB3EE2A00E2730A /* Sources */,
+				9876EF8B1FB3EE2A00E2730A /* Frameworks */,
+				9876EF8C1FB3EE2A00E2730A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9876EF901FB3EE2A00E2730A /* PBXTargetDependency */,
+			);
+			name = FlagsGoTests;
+			productName = FlagsGoTests;
+			productReference = 9876EF8E1FB3EE2A00E2730A /* FlagsGoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9876EF981FB3EE2A00E2730A /* FlagsGoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9876EFA81FB3EE2A00E2730A /* Build configuration list for PBXNativeTarget "FlagsGoUITests" */;
+			buildPhases = (
+				9876EF951FB3EE2A00E2730A /* Sources */,
+				9876EF961FB3EE2A00E2730A /* Frameworks */,
+				9876EF971FB3EE2A00E2730A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9876EF9B1FB3EE2A00E2730A /* PBXTargetDependency */,
+			);
+			name = FlagsGoUITests;
+			productName = FlagsGoUITests;
+			productReference = 9876EF991FB3EE2A00E2730A /* FlagsGoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9876EF721FB3EE2A00E2730A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = brooks;
+				TargetAttributes = {
+					9876EF791FB3EE2A00E2730A = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+					9876EF8D1FB3EE2A00E2730A = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9876EF791FB3EE2A00E2730A;
+					};
+					9876EF981FB3EE2A00E2730A = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9876EF791FB3EE2A00E2730A;
+					};
+				};
+			};
+			buildConfigurationList = 9876EF751FB3EE2A00E2730A /* Build configuration list for PBXProject "FlagsGo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9876EF711FB3EE2A00E2730A;
+			productRefGroup = 9876EF7B1FB3EE2A00E2730A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9876EF791FB3EE2A00E2730A /* FlagsGo */,
+				9876EF8D1FB3EE2A00E2730A /* FlagsGoTests */,
+				9876EF981FB3EE2A00E2730A /* FlagsGoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9876EF781FB3EE2A00E2730A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9876EF881FB3EE2A00E2730A /* LaunchScreen.storyboard in Resources */,
+				986D1ADB1FB9819400348230 /* FlagTableViewCell.xib in Resources */,
+				9876EF851FB3EE2A00E2730A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9876EF8C1FB3EE2A00E2730A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9876EF971FB3EE2A00E2730A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B2AD6D03363F41A5BB78006 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlagsGo/Pods-FlagsGo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		441732466B2541F6E6BAA328 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		808CC9689E412E01848CB80D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlagsGo/Pods-FlagsGo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9876EF761FB3EE2A00E2730A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98F6F1DE1FB92D00003E9451 /* FlagsGoViewController.swift in Sources */,
+				98F6F1EC1FB93D2C003E9451 /* FlagsCardsTableView.swift in Sources */,
+				986D1AD51FB9730200348230 /* FuncListTableView.swift in Sources */,
+				986D1AEF1FB98FDC00348230 /* NewFlagInfoView.swift in Sources */,
+				986D1AE81FB98C1C00348230 /* SwiftNotice.swift in Sources */,
+				98F6F1EE1FB93D73003E9451 /* FlagsMapView.swift in Sources */,
+				984AAF041FC514F500A50B1B /* NewFlagTextField.swift in Sources */,
+				98F6F1E71FB92E5B003E9451 /* UserViewController.swift in Sources */,
+				98F6F1E41FB92DD4003E9451 /* WeatherViewController.swift in Sources */,
+				986D1AE91FB98C1C00348230 /* UIColor+Extension.swift in Sources */,
+				98F6F1EA1FB93BC7003E9451 /* UserInfoTableView.swift in Sources */,
+				986D1AEB1FB98C1C00348230 /* UITextField+Extension.swift in Sources */,
+				9876EF801FB3EE2A00E2730A /* FlagsTabBarViewController.swift in Sources */,
+				986D1AD01FB96D5700348230 /* NewFlagViewController.swift in Sources */,
+				986D1AEC1FB98C1C00348230 /* UIView+Extension.swift in Sources */,
+				986D1AED1FB98C1C00348230 /* UIButton+Extension.swift in Sources */,
+				986D1AE11FB986D600348230 /* FlagDataModel.swift in Sources */,
+				9876EF7E1FB3EE2A00E2730A /* AppDelegate.swift in Sources */,
+				984AAF061FC5246300A50B1B /* FlagsModel.swift in Sources */,
+				98F6F1E11FB92DAB003E9451 /* PoetryViewController.swift in Sources */,
+				986D1ADA1FB9819400348230 /* FlagTableViewCell.swift in Sources */,
+				986D1AEA1FB98C1C00348230 /* UIImageView+Extension.swift in Sources */,
+				986D1ADD1FB9832100348230 /* FlagTag.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9876EF8A1FB3EE2A00E2730A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9876EF931FB3EE2A00E2730A /* FlagsGoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9876EF951FB3EE2A00E2730A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9876EF9E1FB3EE2A00E2730A /* FlagsGoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9876EF901FB3EE2A00E2730A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9876EF791FB3EE2A00E2730A /* FlagsGo */;
+			targetProxy = 9876EF8F1FB3EE2A00E2730A /* PBXContainerItemProxy */;
+		};
+		9876EF9B1FB3EE2A00E2730A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9876EF791FB3EE2A00E2730A /* FlagsGo */;
+			targetProxy = 9876EF9A1FB3EE2A00E2730A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9876EF861FB3EE2A00E2730A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9876EF871FB3EE2A00E2730A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9876EFA01FB3EE2A00E2730A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9876EFA11FB3EE2A00E2730A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9876EFA31FB3EE2A00E2730A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96E31F8DA19E31BEA37CE49F /* Pods-FlagsGo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YJ343D46JX;
+				INFOPLIST_FILE = FlagsGo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flagsgo.FlagsGo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9876EFA41FB3EE2A00E2730A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DF9090F24A3E5F30903CD66 /* Pods-FlagsGo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YJ343D46JX;
+				INFOPLIST_FILE = FlagsGo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flagsgo.FlagsGo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9876EFA61FB3EE2A00E2730A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YJ343D46JX;
+				INFOPLIST_FILE = FlagsGoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flagsgo.FlagsGoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlagsGo.app/FlagsGo";
+			};
+			name = Debug;
+		};
+		9876EFA71FB3EE2A00E2730A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YJ343D46JX;
+				INFOPLIST_FILE = FlagsGoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flagsgo.FlagsGoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlagsGo.app/FlagsGo";
+			};
+			name = Release;
+		};
+		9876EFA91FB3EE2A00E2730A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YJ343D46JX;
+				INFOPLIST_FILE = FlagsGoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flagsgo.FlagsGoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlagsGo;
+			};
+			name = Debug;
+		};
+		9876EFAA1FB3EE2A00E2730A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YJ343D46JX;
+				INFOPLIST_FILE = FlagsGoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flagsgo.FlagsGoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlagsGo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9876EF751FB3EE2A00E2730A /* Build configuration list for PBXProject "FlagsGo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9876EFA01FB3EE2A00E2730A /* Debug */,
+				9876EFA11FB3EE2A00E2730A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9876EFA21FB3EE2A00E2730A /* Build configuration list for PBXNativeTarget "FlagsGo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9876EFA31FB3EE2A00E2730A /* Debug */,
+				9876EFA41FB3EE2A00E2730A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9876EFA51FB3EE2A00E2730A /* Build configuration list for PBXNativeTarget "FlagsGoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9876EFA61FB3EE2A00E2730A /* Debug */,
+				9876EFA71FB3EE2A00E2730A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9876EFA81FB3EE2A00E2730A /* Build configuration list for PBXNativeTarget "FlagsGoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9876EFA91FB3EE2A00E2730A /* Debug */,
+				9876EFAA1FB3EE2A00E2730A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9876EF721FB3EE2A00E2730A /* Project object */;
+}
