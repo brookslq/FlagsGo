@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIView {
-   
+    
     //View的X值
     var x : CGFloat {
         get {
@@ -122,6 +122,16 @@ extension UIView {
             rect.size.height = myHeight
             self.frame       = rect
         }
+    }
+}
+
+extension String {
+    func mySubString(to index: Int) -> String {
+        return String(self[..<self.index(self.startIndex, offsetBy: index)])
+    }
+    
+    func mySubString(from index: Int) -> String {
+        return String(self[self.index(self.startIndex, offsetBy: index)...])
     }
 }
 

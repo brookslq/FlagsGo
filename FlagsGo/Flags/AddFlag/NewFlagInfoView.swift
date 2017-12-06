@@ -20,6 +20,9 @@ class NewFlagInfoView: UIView {
     var dateBgView:     UIView!             //日期选择器蒙层
     var _target:        UIViewController!
     
+    var selectWeekday:  [Int] = []          //存储选择的周一至周天  其中，周天返回值为1，周一为2……
+    var selectTimeBtn:  UIButton!           //选择每天几点 观旗
+    
     private var contentView: UIView!
 
     
@@ -41,9 +44,8 @@ class NewFlagInfoView: UIView {
         let flagtitle = UILabel(frame: CGRect(x: 16, y: 26, width: 56, height: 24))
         flagtitle.text = "插旗:"
         flagtitle.textColor = UIColor.black
-        flagtitle.font = UIFont.boldSystemFont(ofSize: 20
-        )
-        flagtitle.textAlignment = .center
+        flagtitle.font = UIFont.boldSystemFont(ofSize: 20)
+        flagtitle.textAlignment = .left
         self.addSubview(flagtitle)
         //12字数限制
         flagtitleTF = NewFlagTextField(frame: CGRect(x: flagtitle.right + 5, y: 22, width: self.width - 98, height: 30))
@@ -59,7 +61,7 @@ class NewFlagInfoView: UIView {
         flagslogan.text = "宣誓:"
         flagslogan.textColor = UIColor.black
         flagslogan.font = UIFont.boldSystemFont(ofSize: 20)
-        flagslogan.textAlignment = .center
+        flagslogan.textAlignment = .left
         self.addSubview(flagslogan)
         flagsloganTF = NewFlagTextField(frame: CGRect(x: flagslogan.right + 5, y: 80, width: self.width - 98, height: 30))
         flagsloganTF.backgroundColor = UIColor.white
@@ -89,8 +91,52 @@ class NewFlagInfoView: UIView {
         endBtn.setTitleColor(UIColor.black.withAlphaComponent(0.4), for: UIControlState.normal)
         endBtn.addTarget(self, action: #selector(askDatePicker), for: UIControlEvents.touchUpInside)
         
+        startBtn.tag = 1
+        endBtn.tag   = 2
         timeBgView.addSubview(startBtn)
         timeBgView.addSubview(endBtn)
+        
+        let lookLabel = UILabel(frame: CGRect(x: 16, y: timeBgView.bottom + 24, width: 160, height: 12))
+        lookLabel.text = "点击选择观旗日"
+        lookLabel.textColor = UIColor.gray.withAlphaComponent(0.8)
+        lookLabel.font = UIFont.systemFont(ofSize: 12)
+        lookLabel.textAlignment = .left
+        self.addSubview(lookLabel)
+        
+        //for循环七个button
+        let bgView = UIView(frame: CGRect(x: 0, y: lookLabel.bottom + 12, width: self.width, height: 40))
+        bgView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        self.addSubview(bgView)
+        
+        let btnWidth: Double = Double(self.width / 7) //屏宽七等分
+        let weekday = ["周天","周一","周二","周三","周四","周五","周六"]
+        for i in 0..<7 {
+            let button = UIButton(frame: CGRect(x: Double(i) * btnWidth, y: 0.0, width: btnWidth, height: 40.0))
+            button.setTitle(weekday[i], for: UIControlState.normal)
+            button.setTitleColor(UIColor.white, for: UIControlState.normal)
+            button.setTitleColor(UIColor.gray.withAlphaComponent(0.8), for: UIControlState.selected)
+            button.tag = i
+            button.addTarget(self, action: #selector(weekdaySelect), for: UIControlEvents.touchUpInside)
+            bgView.addSubview(button)
+        }
+        
+        
+        let lookTLabel = UILabel(frame: CGRect(x: 16, y: bgView.bottom + 24, width: 160, height: 12))
+        lookTLabel.text = "不选择观旗日则默认每天提醒"
+        lookTLabel.textColor = UIColor.gray.withAlphaComponent(0.8)
+        lookTLabel.font = UIFont.systemFont(ofSize: 12)
+        lookTLabel.textAlignment = .left
+        self.addSubview(lookTLabel)
+        
+        //点击选择提醒时间
+        selectTimeBtn = UIButton(frame: CGRect(x: 0, y: lookTLabel.bottom + 12, width: self.width, height: 40))
+        selectTimeBtn.setTitleColor(UIColor.black.withAlphaComponent(0.4), for: UIControlState.normal)
+        selectTimeBtn.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        selectTimeBtn.setTitle("点击选择观旗日的观旗时刻", for: UIControlState.normal)
+        selectTimeBtn.tag = 3
+        selectTimeBtn.addTarget(self, action: #selector(askDatePicker), for: UIControlEvents.touchUpInside)
+        self.addSubview(selectTimeBtn)
+
         
         dateBgView = UIView(frame: CGRect(x: 0, y: 0, width: self.width, height: self.height))
         dateBgView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
@@ -109,14 +155,36 @@ class NewFlagInfoView: UIView {
         
     }
     
+    ///选择观旗日
+    @objc func weekdaySelect(sender: UIButton) {
+        
+        let weekdayInt = sender.tag + 1
+        //判断数组中是否存在选择项
+        //有，则删除，无，则添加
+        var isHave = false
+        for i in 0..<selectWeekday.count {
+            if selectWeekday[i] == weekdayInt {
+                selectWeekday.remove(at: i)
+                isHave = true
+                break
+            }
+        }
+        if !isHave {
+            selectWeekday.append(weekdayInt)
+        }
+        
+        sender.isSelected = !sender.isSelected
+    }
+    
+    
     ///点击时间选择器背景 -> 时间选择器隐藏
     @objc func hiddenDatePicker() {
-        
-        if dateSelect.date < getCurrentTime() {
+
+        if date2String(date: dateSelect.date) < date2String(date: getCurrentTime()) && dateSelect.datePickerMode == .date {
             print("比当前时间还早！")
-            noticeTop("请选择比今天以后的日期", autoClear: true, autoClearTime: 2)
+            noticeTop("请选择今天或今天以后的日期", autoClear: true, autoClearTime: 2)
         } else {
-            showAlter(title: "时间选择", messgae: getDateSelect(), button: dateSelectBtn)
+            showAlter(title: "时间选择", messgae: date2String(date: dateSelect.date), button: dateSelectBtn)
             dateBgView.isHidden = true
             dateSelect.isHidden = true
             print("比当前时间还远！")
@@ -149,14 +217,30 @@ class NewFlagInfoView: UIView {
         flagtitleTF.resignFirstResponder()
         dateSelect.isHidden = false
         
+        if button.tag == 3 {
+            dateSelect.datePickerMode = .time
+        } else {
+            dateSelect.datePickerMode = .date
+        }
+        
+        
         dateSelectBtn = button
     }
     
     ///时间选择器值改变
-    @objc func getDateSelect() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy年MM月dd日"
-        return formatter.string(from: dateSelect.date)
+    @objc func date2String(date: Date) -> String {
+        
+        var dateStr = ""
+        if dateSelect.datePickerMode == .date {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy年MM月dd日"
+            dateStr = formatter.string(from: date)
+        } else if dateSelect.datePickerMode == .time {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm"
+            dateStr = formatter.string(from:date)
+        }
+        return dateStr
     }
     
     ///获取当前时间

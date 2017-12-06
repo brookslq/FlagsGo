@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class NewFlagViewController: UIViewController {
 
@@ -41,12 +42,23 @@ class NewFlagViewController: UIViewController {
     ///点击 -> 结束 返回
     @objc func doneBtnClick() {
         
-        let flagtitle = newFlagV.flagtitleTF.text
-        let flagslogan = newFlagV.flagsloganTF.text
+        let flagtitle: String = newFlagV.flagtitleTF.text!
+        let flagslogan: String = newFlagV.flagsloganTF.text!
         
-        guard flagtitle?.characters.count != 0 && flagslogan?.characters.count != 0 else {
-            noticeInfo("未填完信息！", autoClear: true, autoClearTime: 1)
+        guard flagtitle.count != 0 && flagslogan.count != 0 else {
+            noticeInfo("未填完信息", autoClear: true, autoClearTime: 1)
             return
+        }
+        
+        let titles = UserDefaults.standard.array(forKey: FlagTag.FLAGS_TITLE) as? [String]
+
+        if titles != nil && (titles?.count)! > 0 {
+            for title in titles! {
+                if flagtitle == title {
+                    noticeInfo("旗名有重复", autoClear: true, autoClearTime: 1)
+                    return
+                }
+            }
         }
         
         //判断时间的选择是否符合逻辑
@@ -68,9 +80,28 @@ class NewFlagViewController: UIViewController {
             return
         }
         
+        //如果没有选择天数，则默认每天
+        if newFlagV.selectWeekday.count == 0 {
+            newFlagV.selectWeekday = [1,2,3,4,5,6,7,8]
+        }
+        
         //添加数据 -> 刷新UI准备
-        let dataModel = FlagDataModel(datas: ["title": flagtitle!, "slogan": flagslogan!])
-        FlagTag.flagDatas.append(dataModel)
+        let dataModel = FlagDataModel(title: flagtitle, slogan: flagslogan, start: (newFlagV.startBtn.titleLabel?.text)!, end: (newFlagV.endBtn.titleLabel?.text)!, clock: (newFlagV.selectTimeBtn.titleLabel?.text)!, weekdays: newFlagV.selectWeekday)
+        //设置该Flag的本地通知
+        setupNotification(dataModel: dataModel)
+        FlagTag.FLAG_DATAS.append(dataModel)
+        
+        //存储数据
+        DataCenter().saveData(path: dataModel.title, data: dataModel)
+        var arry = UserDefaults.standard.array(forKey: FlagTag.FLAGS_TITLE) as? [String]
+        if arry == nil {
+            arry = [String]()
+            arry?.append(dataModel.title)
+        } else {
+            arry?.append(dataModel.title)
+        }
+        UserDefaults.standard.set(arry, forKey: FlagTag.FLAGS_TITLE)
+        
         //发送监听 -> 刷新UI
         NotificationCenter.default.post(name: NSNotification.Name("newflag"), object: nil)
         
@@ -78,4 +109,42 @@ class NewFlagViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
 
+    func setupNotification(dataModel: FlagDataModel) {
+        //在这里配置本地通知
+        let localNotification = UNMutableNotificationContent()
+        localNotification.title = dataModel.title
+        localNotification.body = dataModel.slogan
+        localNotification.badge = 1
+        localNotification.sound = UNNotificationSound.default()
+        
+        //如果没有选择天数 则默认每天
+        let count = dataModel.weekdays.count
+        //按日期重复
+        
+        for i in 0..<count  {
+            var components = DateComponents()
+            components.weekday = dataModel.weekdays[i] //星期天默认是1，星期一是2……
+            components.hour = Int(dataModel.clock.mySubString(to: 2))
+//            print(dataModel.clock.mySubString(to: 2))
+            var minute = dataModel.clock.mySubString(from: 3)
+            for num in 0...10 {
+                minute = minute.replacingOccurrences(of: "0"+String(num), with: "\(num)")
+            }
+            components.minute = Int(minute)
+//            print(dataModel.clock.mySubString(from: 3))
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
+            let request = UNNotificationRequest(identifier: dataModel.title + String(i), content: localNotification, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
+                print("seccess")
+            })
+        }
+        
+        
+        
+        
+        
+//
+    }
+    
 }

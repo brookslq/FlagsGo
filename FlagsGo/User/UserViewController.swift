@@ -10,26 +10,17 @@ import UIKit
 
 class UserViewController: UIViewController {
 
+    var userView: UserInfoTableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        view.backgroundColor = UIColor.initColor(r: 240, g: 240, b: 240, a: 0.8)
+        userView = UserInfoTableView(frame: CGRect(x: 0, y: 0, width: view.width, height: view.height - 68), style: .grouped)
+        userView.target = self
+        view.addSubview(userView)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+ 
 }
